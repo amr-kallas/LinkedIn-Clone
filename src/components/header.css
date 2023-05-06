@@ -1,0 +1,127 @@
+.header{
+    position: relative;
+    background-color: white;
+    margin-top: 5px;
+    height: 50px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header .left{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+.header .left h4{
+    font-size: 30px;
+    color: blue;
+    display: flex;
+    margin-right: 5px;
+}
+.header .left .input{
+    position: relative;
+}
+.header .left .input i{
+    position: absolute;
+    top: 57%;
+    transform: translateY(-50%);
+    left: 4%;
+}
+.header .left .input input{
+    background-color: rgba(0, 0, 0, 0.08);
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    max-width: 200px;
+    outline: none;
+    padding-left: 35px;
+}
+.header .left .input input::placeholder{
+    color: #999;
+}
+
+.header .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+.header .right .box{
+    text-align: center;
+    margin-left: 30px;
+    padding: 0 6px 6px;
+    cursor: pointer;
+    position: relative;
+}
+.header .right .box:hover a{
+    color: black;    
+}
+.header .right .box i{
+    font-size: 18px;
+    color: #888;
+}
+.header .right .box a{
+    font-size: 10px;
+    color: #888;
+    text-decoration: none;
+    display: block;
+}
+.header .right .box .me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .right .box .down{
+    font-size: 10px;
+}
+.header .right .box .out{
+    position: absolute;
+    min-width: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+    background-color: rgba(0, 0, 0, 0.08);
+    padding: 6px;
+}
+.header .out span{
+    font-size: 13px;
+}
+.header .toggle-menu{
+    display: none;
+    position: relative;
+}
+.header .toggle-menu .menu-bars{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 220px;
+    padding: 10px;
+}
+.header .toggle-menu .menu-bars ul{
+    background: rgba(0,0,0,0.08);
+    border-radius: 4px;
+}
+.header .toggle-menu .menu-bars ul li{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.header .toggle-menu .menu-bars ul li:not(:last-child){
+    border-bottom: 1px solid black;
+}
+@media(max-width:860px){
+    .header .right .box{
+        margin-left: 15px;
+    }
+}
+@media(max-width:767px){
+    .header .right{
+        display: none;
+    }
+    .header .toggle-menu{
+        display: block;
+    }
+}

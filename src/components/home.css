@@ -1,0 +1,19 @@
+.home{
+    background-color: rgba(0, 0, 0, 0.08);
+    height: calc(100vh - 55px);
+    width: 100%;
+}
+.home .text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media(max-width:767px){
+    .home .text{
+        flex-direction: column;
+    }
+}

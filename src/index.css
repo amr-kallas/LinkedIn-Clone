@@ -1,0 +1,32 @@
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+@media (min-width:786px) {
+  .container{
+      width: 750px;
+  }
+}
+/* Mieduem */
+@media(min-width:992px){
+  .container{
+      width: 970px;
+  }
+}
+@media(min-width:1200px){
+  .container{
+      width: 1170px;
+  }
+}
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
