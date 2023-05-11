@@ -1,0 +1,52 @@
+.main{
+    flex: 2;
+    margin: 0 20px;
+}
+.main .top-post{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0px 3px black;
+}
+.main .post{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.main .post .image{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.main .post input{
+    width: 90%;
+    padding: 7px 7px 7px 15px;
+    border-radius: 15px;
+    border: 1px solid #888;
+    cursor: pointer;
+}
+.main .post input:focus{
+    outline: none;
+}
+.main .url{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+.main .url .icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+.main .url .icon i{
+    margin-bottom: 3px;
+}
+.main .url .icon p{
+    font-size: 12px;
+    color: #607D8B;
+}

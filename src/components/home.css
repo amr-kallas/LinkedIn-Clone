@@ -1,19 +1,120 @@
-.home{
-    background-color: rgba(0, 0, 0, 0.08);
-    height: calc(100vh - 55px);
-    width: 100%;
+.home {
+  background-color: rgba(0, 0, 0, 0.08);
+  height: calc(100vh - 55px);
+  width: 100%;
 }
-.home .text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 40px;
-    font-size: 14px;
-    text-align: center;
+.home .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  font-size: 14px;
+  text-align: center;
+}
+.home .boxes {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+.home .boxes .left-side {
+  flex: 1;
+}
+.home .boxes .left-side .box-top {
+  position: relative;
+  border: 1px solid #888;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.home .boxes .left-side .box-top .head-img {
+  width: 100%;
+}
+.home .boxes .left-side .box-top .head-img img {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 45px;
+}
+.home .boxes .left-side .box-top .camera {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background: white;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home .boxes .left-side .box-top .texts {
+  padding: 30px 4px;
+  text-align: center;
+  background: white;
+}
+.home .boxes .left-side .box-top .texts h5 {
+  font-size: 15px;
+}
+.home .boxes .left-side .box-top .texts a {
+  text-decoration: none;
+  color: #2196f3;
+  font-size: 12px;
+}
+.home .boxes .left-side .box-top .another-text {
+  padding: 10px 4px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .boxes .left-side .box-top .another-text .connection .connect {
+  font-size: 13px;
+  color: #888;
+}
+.home .boxes .left-side .box-top .another-text .connection .origin {
+  font-size: 13px;
+  font-weight: bold;
+}
+.home .boxes .left-side .box-top .items {
+  background: white;
+  display: flex;
+  padding: 10px 4px;
+}
+.home .boxes .left-side .box-top .items i {
+  display: flex;
+}
+.home .boxes .left-side .box-top .items p {
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 2px;
+}
+.home .boxes .left-side .box-bottom {
+  margin-top: 5px;
+  border: 1px solid #888;
+  background: white;
+  border-radius: 4px;
+}
+.home .boxes .left-side .box-bottom .left-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
 }
 
-@media(max-width:767px){
-    .home .text{
-        flex-direction: column;
-    }
+.home .boxes .left-side .box-bottom .left-box .left-box-text p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+.home .boxes .left-side .box-bottom .left-box .icon-plus i {
+  font-size: 20px;
+}
+.home .boxes .left-side .box-bottom .more {
+  padding: 5px 4px;
+}
+.home .boxes .left-side .box-bottom .more p {
+  color: #888;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .home .text {
+    flex-direction: column;
+  }
 }

@@ -1,5 +1,11 @@
 import React from "react";
 import "./home.css";
+import card from '/images/card-bg.svg'
+import camera from '/images/photo.svg'
+import {FaUserCheck ,FaBookmark} from 'react-icons/fa'
+import {BsPlus} from 'react-icons/bs'
+import Main from "./Main";
+import RightSide from "./RightSide";
 const Home = () => {
   return (
     <div className="home">
@@ -14,26 +20,26 @@ const Home = () => {
         <div className="left-side">
           <div className="box-top">
             <div className="head-img">
-              <img src="" alt="" />
+              <img src={card} alt="" />
             </div>
-            <img src="" alt="" />
-            <div className="text">
+            <img src={camera} className="camera" alt="" />
+            <div className="texts">
               <h5>Welcome, Amr Kallas</h5>
               <a href="">Add a photo</a>
             </div>
             <hr />
             <div className="another-text">
               <div className="connection">
-                <p>Connections</p>
-                <p>Origin photo Network</p>
+                <p className="connect">Connections</p>
+                <p className="origin">Origin photo Network</p>
               </div>
               <div className="icon-friend">
-                <i></i>
+                <i><FaUserCheck/></i>
               </div>
             </div>
             <hr />
-            <div className="itmes">
-              <i></i>
+            <div className="items">
+              <i><FaBookmark/></i>
               <p>My items</p>
             </div>
           </div>
@@ -45,7 +51,7 @@ const Home = () => {
                 <p>Follows</p>
               </div>
               <div className="icon-plus">
-                <i></i>
+                <i><BsPlus/></i>
               </div>
             </div>
             <hr />
@@ -54,8 +60,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="main"></div>
-        <div className="right-side"></div>
+        <Main/>
+        <RightSide/>
       </div>
     </div>
   );
