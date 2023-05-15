@@ -5,8 +5,10 @@ import { SlPicture } from "react-icons/sl";
 import { RiVideoFill, RiArticleLine } from "react-icons/ri";
 import { BiCalendarEvent } from "react-icons/bi";
 import Post from "./Post";
+import { connect } from "react-redux";
+import Article from "./Article";
 
-const Main = () => {
+const Main = (props:any) => {
   const [post, setPost] = useState(false);
   return (
     <>
@@ -49,10 +51,16 @@ const Main = () => {
             </div>
           </div>
         </div>
+        <Article articles={props.articles} loading={props.loading}/>
       </div>
-      {post && <Post setPost={setPost} />}
+      {post && <Post setPost={setPost}/>}
     </>
   );
 };
-
-export default Main;
+const mapStateToProps = (state: any) => {
+  return {
+    articles: state.Articles.articles,
+    loading:state.Articles.loading
+  };
+};
+export default connect(mapStateToProps)(Main);

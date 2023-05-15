@@ -1,0 +1,44 @@
+.article{
+
+}
+.article .article-boxes{
+
+}
+.article .article-boxes .box{
+    width: 100%;
+    background-color: white;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 6px black
+}
+.article .article-boxes .box .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.article .article-boxes .box .info .name{
+    display: flex;
+}
+.article .article-boxes .box .info .name .image{
+    margin: auto;
+}
+.article .article-boxes .box .info .name .text-info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.article .article-boxes .box .info .name .text-info p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.article .article-boxes .box .info .name .text-info span{
+    font-size: 12px;
+    color: #888;
+}
+.article .article-boxes .box .description{
+
+}
+.article .article-boxes .box .description p{
+    padding: 5px 10px 10px 40px;
+}
