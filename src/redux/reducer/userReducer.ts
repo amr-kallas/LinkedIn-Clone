@@ -1,8 +1,8 @@
 import { USER_TYPE } from "../actions/ActionType";
 
 const initialState = {
-  user:null
-}
+  user: null,
+};
 interface ActionType {
   type: string;
   payload: string;
@@ -14,8 +14,8 @@ const userReducer = (state = initialState, action: ActionType) => {
         ...state,
         user: action.payload,
       };
-      default:
-        return state
+    default:
+      return state;
   }
 };
 export default userReducer;

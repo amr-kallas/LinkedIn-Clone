@@ -17,3 +17,9 @@ export const getArticles = (payload: any) => {
     payload: payload,
   };
 };
+export const setLike = (id: any) => {
+  return {
+    type: actions.SET_LIKE,
+    id: id,
+  };
+};

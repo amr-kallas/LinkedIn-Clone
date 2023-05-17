@@ -8,7 +8,7 @@ import Post from "./Post";
 import { connect } from "react-redux";
 import Article from "./Article";
 
-const Main = (props:any) => {
+const Main = (props: any) => {
   const [post, setPost] = useState(false);
   return (
     <>
@@ -51,16 +51,16 @@ const Main = (props:any) => {
             </div>
           </div>
         </div>
-        <Article articles={props.articles} loading={props.loading}/>
+        <Article articles={props.articles} loading={props.loading} />
       </div>
-      {post && <Post setPost={setPost}/>}
+      {post && <Post setPost={setPost} />}
     </>
   );
 };
 const mapStateToProps = (state: any) => {
   return {
     articles: state.Articles.articles,
-    loading:state.Articles.loading
+    loading: state.Articles.loading,
   };
 };
 export default connect(mapStateToProps)(Main);

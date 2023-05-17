@@ -1,126 +1,123 @@
-.login{
-    background-color: rgba(0, 0, 0, 0.08);
-    height: 100vh;
-    padding-top: 20px;
-    overflow: hidden;
+.login {
+  background-color: rgba(0, 0, 0, 0.08);
+  height: 100vh;
+  padding-top: 20px;
+  overflow: hidden;
 }
-.login .top-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
+.login .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
-.login .top-bar img{
-    width: 100px;
+.login .top-bar img {
+  width: 100px;
 }
-.login .top-bar .buttons-login button{
-    border: none;
+.login .top-bar .buttons-login button {
+  border: none;
 }
-.login .top-bar .buttons-login button.join{
-    margin-right: 20px;
-    padding: 10px 24px;
-    border-radius: 24px;
-    cursor: pointer;
+.login .top-bar .buttons-login button.join {
+  margin-right: 20px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  cursor: pointer;
 }
-.login .top-bar .buttons-login button.sign-in{
-    color: #0a66c2;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid;
-    padding: 10px 20px;
-    border-radius: 24px;
-    cursor: pointer;
+.login .top-bar .buttons-login button.sign-in {
+  color: #0a66c2;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid;
+  padding: 10px 20px;
+  border-radius: 24px;
+  cursor: pointer;
 }
-.login .top-bar .buttons-login button.sign-in:hover{
-    background-color: rgba(112, 181, 249, 0.15);
-    color: #0a66c2;
-
+.login .top-bar .buttons-login button.sign-in:hover {
+  background-color: rgba(112, 181, 249, 0.15);
+  color: #0a66c2;
 }
-.login .top-bar .buttons-login button.join:hover{
-    background-color: rgba(0, 0, 0, 0.08);
-    color: rgba(0, 0, 0, 0.9);
+.login .top-bar .buttons-login button.join:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.9);
 }
-.login .welcome{
-    height: calc(100% - 50px);
-    display: flex;
-    justify-content: space-between;
-    margin-top: 75px;
+.login .welcome {
+  height: calc(100% - 50px);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
 }
-.login .welcome .text{
-    flex: 1;
-    max-width: 475px;
+.login .welcome .text {
+  flex: 1;
+  max-width: 475px;
 }
-.login .welcome .text h2{
-    color: #2977c9;
-    font-size: 40px;
+.login .welcome .text h2 {
+  color: #2977c9;
+  font-size: 40px;
 }
-.login .welcome .text .sign-google{
-    display: flex;
-    align-items: center;
-    border: 1px solid;
-    position: relative;
-    border-radius: 15px;
-    margin-top: 50px;
-    overflow: hidden;
-    cursor: pointer;
-
+.login .welcome .text .sign-google {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  position: relative;
+  border-radius: 15px;
+  margin-top: 50px;
+  overflow: hidden;
+  cursor: pointer;
 }
-.login .welcome .text .sign-google button{
-    flex: 10;
-    padding: 10px 12px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+.login .welcome .text .sign-google button {
+  flex: 10;
+  padding: 10px 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
-.login .welcome .text .sign-google .button-sign{
-    text-decoration: none;
+.login .welcome .text .sign-google .button-sign {
+  text-decoration: none;
 }
-.login .welcome .text .sign-google button:hover{
-    background-color: rgba(207, 207, 207, 0.25);
-    color: rgba(0, 0, 0, 0.75);
+.login .welcome .text .sign-google button:hover {
+  background-color: rgba(207, 207, 207, 0.25);
+  color: rgba(0, 0, 0, 0.75);
 }
 .login .welcome .text .sign-google .google {
-    width: 30px;
-    flex: 1;
-    position: absolute;
-    left: 28%;
+  width: 30px;
+  flex: 1;
+  position: absolute;
+  left: 28%;
 }
-.login .welcome .hero{
-    max-width: 470px;
-    flex: 2;
+.login .welcome .hero {
+  max-width: 470px;
+  flex: 2;
 }
-@media(max-width:997px){
-    .login .welcome .text .sign-google .google{
-        left: 7%;
-    }
+@media (max-width: 997px) {
+  .login .welcome .text .sign-google .google {
+    left: 7%;
+  }
 }
-@media(max-width:767px){
-    .login .welcome{
-        flex-direction: column;
-    }
-    .login .welcome .text{
-        margin: auto;
-    }
-    .login .welcome .text h2{
-        font-size: 35px;
-        text-align: center;
-    }
-    .login .welcome .hero{
-        max-width: 250px;
-        margin: 50px auto 0;
-        
-    }
-    .login .welcome .text .sign-google .google{
-        left: 25%;
-    }
+@media (max-width: 767px) {
+  .login .welcome {
+    flex-direction: column;
+  }
+  .login .welcome .text {
+    margin: auto;
+  }
+  .login .welcome .text h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+  .login .welcome .hero {
+    max-width: 250px;
+    margin: 50px auto 0;
+  }
+  .login .welcome .text .sign-google .google {
+    left: 25%;
+  }
 }
 
-@media(max-width:420px){
-    .login .welcome .text .sign-google .google{
-        left: 18%;
-    }
+@media (max-width: 420px) {
+  .login .welcome .text .sign-google .google {
+    left: 18%;
+  }
 }
-@media(max-width:435px){
-    .login .welcome .text h2{
-        font-size: 25px;
-    }
+@media (max-width: 435px) {
+  .login .welcome .text h2 {
+    font-size: 25px;
+  }
 }

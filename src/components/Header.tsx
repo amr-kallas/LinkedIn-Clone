@@ -40,25 +40,25 @@ const Header = () => {
             <i>
               <FaUsers />
             </i>
-            <Link to={''}>My Network</Link>
+            <Link to={""}>My Network</Link>
           </div>
           <div className="box hov">
             <i>
               <FaShoppingBag />
             </i>
-            <Link to={''}>Jobs</Link>
+            <Link to={""}>Jobs</Link>
           </div>
           <div className="box hov">
             <i>
               <BiMessageRounded />
             </i>
-            <Link to={''}>Messaging</Link>
+            <Link to={""}>Messaging</Link>
           </div>
           <div className="box hov">
             <i>
               <BiBell />
             </i>
-            <Link to={''}>Notification</Link>
+            <Link to={""}>Notification</Link>
           </div>
           <div
             className="box"
@@ -67,7 +67,7 @@ const Header = () => {
             <i>
               <BiUser />
             </i>
-            <Link to={''} className="me">
+            <Link to={""} className="me">
               Me{" "}
               <i className="down">
                 <FaAngleDown />
@@ -75,7 +75,7 @@ const Header = () => {
             </Link>
             {signout && (
               <div className="out">
-                <Link to={'/'}>sign out</Link>
+                <Link to={"/"}>sign out</Link>
               </div>
             )}
           </div>
@@ -83,7 +83,7 @@ const Header = () => {
             <i>
               <BiTable />
             </i>
-            <Link to={''} className="me">
+            <Link to={""} className="me">
               Work{" "}
               <i className="down">
                 <FaAngleDown />
@@ -110,9 +110,7 @@ const Header = () => {
                     <FaAngleDown />
                   </i>
                 </li>
-                {signout&&(
-                  <li>Sign Out</li>
-                )}
+                {signout && <li>Sign Out</li>}
                 <li>
                   Work{" "}
                   <i>

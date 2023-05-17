@@ -1,3 +1,61 @@
-.right-side{
-    flex: 1;
+.right-side {
+  flex: 1;
+}
+.right-side .box-top {
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+}
+.right-side .box-top .feed {
+  display: flex;
+  justify-content: space-between;
+}
+.right-side .box-top .feed p {
+  color: #888;
+  font-weight: bold;
+}
+.right-side .box-top .hashtag {
+  display: flex;
+  margin-top: 15px;
+}
+.right-side .box-top .hashtag .hashtag-son i {
+  font-size: 35px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  margin-right: 10px;
+  border: 3px solid black;
+}
+.right-side .box-top .hashtag .text-right p {
+  font-size: 13px;
+  text-align: center;
+}
+.right-side .box-top .hashtag .text-right .follow {
+  border: 3px solid black;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.right-side .box-top .view {
+  margin-top: 15px;
+  color: #2196f3;
+  display: flex;
+  align-items: center;
+}
+.right-side .box-top .view i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.right-side .box-bottom {
+  background-color: white;
+  padding: 5px;
+  margin-top: 10px;
+  height: 217px;
+  border-radius: 6px;
+}
+.right-side .box-bottom img {
+  height: 100%;
+  width: 100%;
 }

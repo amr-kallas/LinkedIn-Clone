@@ -1,4 +1,9 @@
 import * as actions from "../actions/ActionType";
+type art = {
+  id: number;
+  descrition: string;
+  image: any;
+};
 export const initialState = {
   loading: false,
   articles: [],
@@ -13,10 +18,21 @@ const articleReducer = (state = initialState, action: any) => {
     case actions.GET_ARTICLES:
       return {
         ...state,
-        articles:[...state.articles,action.payload],
+        articles: [...state.articles, action.payload],
+      };
+    case actions.SET_LIKE:
+      return {
+        articles: state.articles.map((article) => {
+          if (article.id == action.id) {
+            return {
+              ...article,
+              isLike: { ...article.isLike, liked: !article.isLike.liked },
+            };
+          } else return article;
+        }),
       };
     default:
       return state;
   }
 };
-export default articleReducer
+export default articleReducer;

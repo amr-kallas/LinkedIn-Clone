@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import React from "react";
 import "./post.css";
 import goolge from "/images/google.svg";
@@ -14,24 +14,30 @@ type post = {
   setPost: React.Dispatch<React.SetStateAction<boolean>>;
   gitArticle: Function;
   articles: any;
-  setLoading:Function
+  setLoading: Function;
 };
 
 const Post = (props: post) => {
+  const setID = useId();
   function reset() {
-    props.setLoading(true)
+    props.setLoading(true);
     props.setPost(false);
     props.gitArticle({
-      description:text,
-      image:showImg,
-      video:video
+      id: setID,
+      description: text,
+      image: showImg,
+      video: video,
+      isLike: {
+        count: 0,
+        liked: false,
+      },
     });
     setMedia("");
     setText("");
     setImg("");
     setShowImg("");
     setVideo("");
-    props.setLoading(false)
+    props.setLoading(false);
   }
   const [media, setMedia] = useState("");
   const [text, setText] = useState("");
@@ -137,7 +143,7 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: any) => {
   return {
     gitArticle: (payload: any) => dispatch(getArticles(payload)),
-    setLoading:(payload:any)=>dispatch(setLoading(payload))
+    setLoading: (payload: any) => dispatch(setLoading(payload)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Post);

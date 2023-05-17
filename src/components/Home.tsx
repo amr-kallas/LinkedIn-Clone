@@ -1,9 +1,9 @@
 import React from "react";
 import "./home.css";
-import card from '/images/card-bg.svg'
-import camera from '/images/photo.svg'
-import {FaUserCheck ,FaBookmark} from 'react-icons/fa'
-import {BsPlus} from 'react-icons/bs'
+import card from "/images/card-bg.svg";
+import camera from "/images/photo.svg";
+import { FaUserCheck, FaBookmark } from "react-icons/fa";
+import { BsPlus } from "react-icons/bs";
 import Main from "./Main";
 import RightSide from "./RightSide";
 const Home = () => {
@@ -34,12 +34,16 @@ const Home = () => {
                 <p className="origin">Origin photo Network</p>
               </div>
               <div className="icon-friend">
-                <i><FaUserCheck/></i>
+                <i>
+                  <FaUserCheck />
+                </i>
               </div>
             </div>
             <hr />
             <div className="items">
-              <i><FaBookmark/></i>
+              <i>
+                <FaBookmark />
+              </i>
               <p>My items</p>
             </div>
           </div>
@@ -51,7 +55,9 @@ const Home = () => {
                 <p>Follows</p>
               </div>
               <div className="icon-plus">
-                <i><BsPlus/></i>
+                <i>
+                  <BsPlus />
+                </i>
               </div>
             </div>
             <hr />
@@ -60,8 +66,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Main/>
-        <RightSide/>
+        <Main />
+        <RightSide />
       </div>
     </div>
   );
