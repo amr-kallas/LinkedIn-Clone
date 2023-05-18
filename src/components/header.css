@@ -94,22 +94,32 @@
 .header .toggle-menu {
   display: none;
   position: relative;
+  background-color: white;
 }
 .header .toggle-menu .menu-bars {
   position: absolute;
-  right: 0;
-  top: 20px;
+  right: -15px;
+  top: 0px;
   width: 220px;
+  background: white;
   padding: 10px;
+  height: 100vh;
+}
+.header .toggle-menu .menu-bars .close{
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 .header .toggle-menu .menu-bars ul {
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  margin-top: 10px;
 }
 .header .toggle-menu .menu-bars ul li {
   list-style: none;
   padding: 10px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 .header .toggle-menu .menu-bars ul li:not(:last-child) {
   border-bottom: 1px solid black;

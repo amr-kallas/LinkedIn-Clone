@@ -9,6 +9,7 @@ import {
   FaBars,
 } from "react-icons/fa";
 import { BiMessageRounded, BiBell, BiUser, BiTable } from "react-icons/bi";
+import {AiOutlineClose} from 'react-icons/ai'
 import "./header.css";
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -94,10 +95,11 @@ const Header = () => {
         <div className="toggle-menu">
           <FaBars
             style={{ cursor: "pointer" }}
-            onClick={() => setBars((current) => !current)}
+            onClick={() => setBars(true)}
           />
           {bars && (
             <div className="menu-bars">
+              <i className="close" onClick={()=>setBars(false)}><AiOutlineClose/></i>
               <ul>
                 <li>Home</li>
                 <li>My NetWork</li>

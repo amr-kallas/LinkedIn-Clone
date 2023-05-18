@@ -7,8 +7,8 @@
   width: 400px;
   border-radius: 12px;
   box-shadow: 0 0 5px black;
+  z-index: 44;
 }
-
 .postes .header-postes {
   display: flex;
   justify-content: space-between;
@@ -88,12 +88,6 @@
   margin-bottom: 20px;
   cursor: pointer;
 }
-.label-none {
-  display: none;
-}
-.label-block {
-  display: block;
-}
 .postes .sl-img .show-img {
   width: 200px;
   height: 200px;
@@ -109,4 +103,14 @@
 }
 .postes .sl-video .show-vid {
   height: 200px;
+}
+@media(max-width:700px){
+  .postes{
+    top: 70%;
+  }
+}
+@media(max-width:400px){
+  .postes{
+    width: 335px;
+  }
 }

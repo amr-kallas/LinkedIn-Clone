@@ -9,7 +9,6 @@ import { BiMessageEdit } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import { getArticles, setLoading } from "../redux/actions/Action";
 import { connect } from "react-redux";
-import Article from "./Article";
 type post = {
   setPost: React.Dispatch<React.SetStateAction<boolean>>;
   gitArticle: Function;
@@ -51,6 +50,7 @@ const Post = (props: post) => {
   }, [img]);
   return (
     <>
+        <div className="shadow"></div>
       <div className="postes">
         <div className="header-postes">
           <p>Create a post</p>

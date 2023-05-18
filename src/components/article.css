@@ -93,3 +93,8 @@
 .article .article-boxes .box .video {
   height: 390px;
 }
+@media(max-width:767px){
+  .article .article-boxes .box ul li {
+    font-size: 14px;
+  }
+}

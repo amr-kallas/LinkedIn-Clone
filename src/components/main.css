@@ -51,3 +51,8 @@
   font-size: 12px;
   color: #607d8b;
 }
+@media(max-width:700px){
+  .main{
+    margin: 0;
+  }
+}

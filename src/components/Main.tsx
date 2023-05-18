@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, useState } from "react";
+import React, { useState } from "react";
 import "./main.css";
 import goolge from "/images/google.svg";
 import { SlPicture } from "react-icons/sl";
@@ -7,9 +7,11 @@ import { BiCalendarEvent } from "react-icons/bi";
 import Post from "./Post";
 import { connect } from "react-redux";
 import Article from "./Article";
+import { useShadowProvider } from "../context/Shadow";
 
 const Main = (props: any) => {
-  const [post, setPost] = useState(false);
+  // const [post, setPost] = useState(false);
+  const {post,setPost}= useShadowProvider()
   return (
     <>
       <div className="main">
