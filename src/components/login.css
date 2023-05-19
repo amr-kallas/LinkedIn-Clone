@@ -13,16 +13,17 @@
 .login .top-bar img {
   width: 100px;
 }
-.login .top-bar .buttons-login button {
+.login .top-bar .buttons-login a {
   border: none;
+  text-decoration: none;
 }
-.login .top-bar .buttons-login button.join {
+.login .top-bar .buttons-login .join {
   margin-right: 20px;
   padding: 10px 24px;
   border-radius: 24px;
   cursor: pointer;
 }
-.login .top-bar .buttons-login button.sign-in {
+.login .top-bar .buttons-login .sign-in {
   color: #0a66c2;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid;

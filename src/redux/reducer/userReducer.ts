@@ -1,18 +1,14 @@
 import { USER_TYPE } from "../actions/ActionType";
 
 const initialState = {
-  user: null,
+  user: [],
 };
-interface ActionType {
-  type: string;
-  payload: string;
-}
-const userReducer = (state = initialState, action: ActionType) => {
+
+const userReducer = (state = initialState, action:any) => {
   switch (action.type) {
     case USER_TYPE:
       return {
-        ...state,
-        user: action.payload,
+        user: [action.user]
       };
     default:
       return state;

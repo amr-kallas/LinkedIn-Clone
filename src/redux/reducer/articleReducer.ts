@@ -1,9 +1,5 @@
 import * as actions from "../actions/ActionType";
-type art = {
-  id: number;
-  descrition: string;
-  image: any;
-};
+
 export const initialState = {
   loading: false,
   articles: [],

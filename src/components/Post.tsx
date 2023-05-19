@@ -17,6 +17,7 @@ type post = {
 };
 
 const Post = (props: post) => {
+  console.log(props)
   const setID = useId();
   function reset() {
     props.setLoading(true);
@@ -50,7 +51,7 @@ const Post = (props: post) => {
   }, [img]);
   return (
     <>
-        <div className="shadow"></div>
+      <div className="shadow"></div>
       <div className="postes">
         <div className="header-postes">
           <p>Create a post</p>
@@ -138,6 +139,7 @@ const mapStateToProps = (state: any) => {
   return {
     loading: state.Articles.loading,
     articles: state.Articles.articles,
+    user: state.User.user,
   };
 };
 const mapDispatchToProps = (dispatch: any) => {

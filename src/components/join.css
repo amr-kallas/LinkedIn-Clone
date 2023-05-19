@@ -1,0 +1,87 @@
+.join{
+    background: linear-gradient(68.66deg,#e8e2ff 1.3%,#f7f5ff 50%);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.join form{
+    width: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px black;
+}
+.join form h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.join form label{
+    font-weight: bold;
+    font-size: 13px;
+}
+.join form input{
+    padding: 0.5rem 5px;
+    border-radius: 8px;
+    margin: 3px 0 20px;
+    border: 1px solid #888;
+}
+.join form input:focus{
+    box-shadow: 0 0 0 0.1875rem rgba(109, 74, 255, 0.2);
+    outline: none;
+    border-color: #6d4aff;
+}
+.join form button{
+    background-color: #6d4aff;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+.join form button a{
+    text-decoration: none;
+    color: white;
+}
+.join form p{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+}
+.join form p a{
+    color: #6d4aff;
+}
+.join form hr{
+    margin: 20px 0px;
+    font-size: 4px;
+    height: 1px;
+    border: none;
+    background-color: #adaba8;
+}
+.join form .terms{
+    color: #adaba8;
+    font-size: 13px;
+}
+@media(max-width:430px){
+    .join form{
+        width: 350px;
+    }
+    .join form h2{
+        font-size: 25px;
+    }
+}
+@media(max-width:350px){
+    .join form{
+        width: 300px;
+    }
+    .join form h2{
+        font-size: 20px;
+    }
+}

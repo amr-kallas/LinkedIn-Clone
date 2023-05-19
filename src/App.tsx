@@ -6,6 +6,8 @@ import { store } from "./redux/app/store";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import ShadowProvider from "./context/Shadow";
+import Sign from "./components/Sign";
+import Join from "./components/Join";
 const App = () => {
   return (
     <ShadowProvider>
@@ -23,6 +25,8 @@ const App = () => {
                   </>
                 }
               />
+              <Route path="/sign" element={<Sign/>}/>
+              <Route path="/join" element={<Join/>}/>
             </Routes>
           </Router>
         </Provider>

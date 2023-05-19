@@ -14,8 +14,8 @@ const Login = () => {
         <div className="top-bar">
           <img src={logo} alt="" />
           <div className="buttons-login">
-            <button className="join">Join now</button>
-            <button className="sign-in">Sign in</button>
+            <Link to={'/join'} className="join">Join now</Link>
+            <Link to={'/sign'} className="sign-in"> Sign in</Link>
           </div>
         </div>
         <div className="welcome">
