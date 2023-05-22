@@ -14,12 +14,28 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  position: relative;
 }
 .article .article-boxes .box .info .name {
   display: flex;
 }
 .article .article-boxes .box .info .name .image {
   margin: auto;
+}
+.article .article-boxes .box .info  i{
+  cursor: pointer;
+}
+.article .article-boxes .box .info .information{
+  position: absolute;
+  right: 30px;
+  background: #eee;
+  bottom: -15px;
+  padding: 4px;
+}
+.article .article-boxes .box .info .information p{
+  font-size: 12px;
+  padding: 4px;
+  cursor: pointer;
 }
 .article .article-boxes .box .info .name .image img {
   width: 50px;

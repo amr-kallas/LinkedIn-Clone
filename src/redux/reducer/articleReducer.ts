@@ -31,8 +31,29 @@ const articleReducer = (state = initialState, action: any) => {
           } else return article;
         }),
       };
+      case actions.EDIT_DELTETE:
+      return {
+        articles: state.articles.map((article:any) => {
+          if (article.id == action.editAndDelete) {
+            return {
+              ...article,
+              editAndDelete:!article.editAndDelete
+            };
+          } else return article;
+        }),
+      };
+    case actions.DELETE_POST:
+      localStorage.removeItem("articles")
+      return{
+        ...state,
+        articles:state.articles.filter((article:any)=>{
+          return article.id !=action.deleteId
+        })
+      }
+      
     default:
       return state;
   }
+  
 };
 export default articleReducer;

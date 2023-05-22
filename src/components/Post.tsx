@@ -33,6 +33,7 @@ const Post = (props: post) => {
         count: 0,
         liked: false,
       },
+      editAndDelete:false
     });
     setMedia("");
     setText("");

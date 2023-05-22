@@ -17,12 +17,24 @@ export const getArticles = (payload: any) => {
     payload: payload,
   };
 };
+export const deletePost=(deleteId:any)=>{
+  return{
+    type:actions.DELETE_POST,
+    deleteId:deleteId
+  }
+}
 export const setLike = (id: any) => {
   return {
     type: actions.SET_LIKE,
     id: id,
   };
 };
+export const edit_delete=(id:any)=>{
+  return{
+    type: actions.EDIT_DELTETE,
+    editAndDelete:id
+  }
+}
 export const setImgProfile=(img:any)=>{
   return{
     type:actions.SET_IMG,

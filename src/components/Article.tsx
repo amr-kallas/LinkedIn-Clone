@@ -8,7 +8,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { IoMdShareAlt } from "react-icons/io";
 import { IoIosSend } from "react-icons/io";
 import ReactPlayer from "react-player";
-import { setLike } from "../redux/actions/Action";
+import { deletePost, edit_delete, setLike } from "../redux/actions/Action";
 import { connect } from "react-redux";
 type propsArticle = {
   articles: any;
@@ -16,13 +16,16 @@ type propsArticle = {
   setLike: Function;
   user:any
   img:any
+  deletePost:Function,
+  edit_delete:Function
 };
 const Article = (props: propsArticle) => {
-  // console.log(props.articles)
+  const [edit,setEdit]=useState(false)
+  console.log(props.articles)
   const date: any = new Date();
   return (
     <div className="article">
-      {props && (
+      {props.articles && (
         <div className="article-boxes">
           {props.articles.map((article: any, index: number) => {
             return (
@@ -45,9 +48,16 @@ const Article = (props: propsArticle) => {
                       </span>
                     </div>
                   </div>
-                  <i>
+                  <i onClick={()=>props.edit_delete(article.id)}>
                     <BsThreeDots />
                   </i>
+                  {article.editAndDelete&&(
+                    <div className="information">
+                      <p>Edit</p>
+                      <hr />
+                      <p onClick={()=>{props.deletePost(article.id)}}>Delete</p>
+                    </div>
+                  )}
                 </div>
                 <div className="description">
                   <p>{article.description}</p>
@@ -127,6 +137,8 @@ const mapStateToProps=(state:any)=>{
 const mapDispatchToProps = (dispatch: any) => {
   return {
     setLike: (id: any) => dispatch(setLike(id)),
+    deletePost:(id:any)=>dispatch(deletePost(id)),
+    edit_delete:(id:any)=>dispatch(edit_delete(id))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Article);
