@@ -21,7 +21,12 @@
   align-items: center;
   border-radius: 50%;
 }
-
+.main .post .image img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
 .main .post input {
   width: 90%;
   padding: 7px 7px 7px 15px;

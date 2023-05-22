@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { user } from "../redux/actions/Action";
 import "./join.css";
 const Join = (props: any) => {
@@ -9,6 +9,7 @@ const Join = (props: any) => {
   const [password, setPassword] = useState("");
   const [currPassword, setCurrPassword] = useState("");
   const [confirm, setConfirm] = useState<boolean>();
+  const [error, setError] = useState<boolean>();
   const sendUser = () => {
     props.setUser({
       name: name,
@@ -19,24 +20,27 @@ const Join = (props: any) => {
   const confirmPassword = (e: any) => {
     setCurrPassword(e.target.value);
   };
-
+  const navigate=useNavigate()
   useEffect(() => {
     if (currPassword == password) {
       setConfirm(true);
-    }else{
-      setConfirm(false)
+    } else {
+      setConfirm(false);
     }
   }, [currPassword]);
-  const home=(e:any)=>{
-    console.log("hello")
-    // e.preventDefault()
-    sendUser();
-    <Link to={'/home'}></Link>
-
-  }
+  const handler = (e: any) => {
+    e.preventDefault();
+    if (password != currPassword) {
+      setError(true);
+    } else {
+      setError(false);
+      sendUser()
+      navigate('/home')
+    }
+  };
   return (
     <div className="join">
-      <form >
+      <form onSubmit={(e) => handler(e)}>
         <h2>Create Your Account</h2>
         <label htmlFor="name">Name</label>
         <input
@@ -79,17 +83,18 @@ const Join = (props: any) => {
           }}
           minLength={8}
         />
-        <button onClick={(e)=>home(e)}>
-          {/* <Link to={"/home"} className="account" onClick={() => sendUser()}> */}
-            Create account
-          {/* </Link> */}
+        {error && (
+          <p className="password">the password isn't correct, try again</p>
+        )}
+        <button>
+          Create account
         </button>
-        <p>
+        <p className="have-account">
           Already have an account? <Link to={"/sign"}>Sign in</Link>
         </p>
         <hr />
         <p className="terms">
-          By creating a Proton account, you agree to our <br />{" "}
+          By creating an account, you agree to our <br />{" "}
           <Link to={"#"}> terms and conditions </Link>
         </p>
       </form>

@@ -54,10 +54,11 @@
 .home .boxes .left-side .box-top .texts h5 {
   font-size: 15px;
 }
-.home .boxes .left-side .box-top .texts a {
+.home .boxes .left-side .box-top .texts label {
   text-decoration: none;
   color: #2196f3;
   font-size: 12px;
+  cursor: pointer;
 }
 .home .boxes .left-side .box-top .another-text {
   padding: 10px 4px;

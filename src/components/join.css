@@ -36,6 +36,13 @@
     outline: none;
     border-color: #6d4aff;
 }
+.join form .password{
+    font-size: 13px;
+    color: red;
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
 .join form button{
     background-color: #6d4aff;
     border: none;
@@ -45,12 +52,13 @@
     margin-top: 15px;
     text-decoration: none;
     text-align: center;
+    cursor: pointer;
 }
 .join form button a{
     text-decoration: none;
     color: white;
 }
-.join form p{
+.join form .have-account{
     text-align: center;
     margin-top: 15px;
     font-size: 15px;
@@ -68,6 +76,7 @@
 .join form .terms{
     color: #adaba8;
     font-size: 13px;
+    text-align: center;
 }
 @media(max-width:430px){
     .join form{

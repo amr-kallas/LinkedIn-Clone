@@ -23,3 +23,9 @@ export const setLike = (id: any) => {
     id: id,
   };
 };
+export const setImgProfile=(img:any)=>{
+  return{
+    type:actions.SET_IMG,
+    img:img
+  }
+}

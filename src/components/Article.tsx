@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import google from "/images/google.svg";
-import majed1 from "/images/majed1.jpg";
+import user from "/images/user.jpeg";
 import "./article.css";
 import { BsThreeDots } from "react-icons/bs";
 import { BiLike } from "react-icons/bi";
@@ -14,11 +14,12 @@ type propsArticle = {
   articles: any;
   loading: boolean;
   setLike: Function;
+  user:any
+  img:any
 };
 const Article = (props: propsArticle) => {
   // console.log(props.articles)
   const date: any = new Date();
-  const [like, setLike] = useState(false);
   return (
     <div className="article">
       {props && (
@@ -29,11 +30,15 @@ const Article = (props: propsArticle) => {
                 <div className="info">
                   <div className="name">
                     <div className="image">
-                      <img src={majed1} alt="" />
+                      {props.img?(
+                      <img src={props.img} alt="" />
+                      ):(
+                      <img src={user} alt="" />
+                      )}
                     </div>
                     <div className="text-info">
-                      <p>Amr Kallas</p>
-                      <span>amr.kallas@gmail.com</span>
+                      <p>{props.user[0].name}</p>
+                      <span>{props.user[0].email}</span>
                       <span>
                         {date.getDate()}/{date.getMonth() + 1}/
                         {date.getFullYear()}
@@ -113,9 +118,15 @@ const Article = (props: propsArticle) => {
     </div>
   );
 };
+const mapStateToProps=(state:any)=>{
+  return{
+    user:state.User.user,
+    img:state.User.img
+  }
+}
 const mapDispatchToProps = (dispatch: any) => {
   return {
     setLike: (id: any) => dispatch(setLike(id)),
   };
 };
-export default connect(null, mapDispatchToProps)(Article);
+export default connect(mapStateToProps, mapDispatchToProps)(Article);

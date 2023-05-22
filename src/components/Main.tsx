@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./main.css";
-import goolge from "/images/google.svg";
+import user from "/images/user.jpeg";
 import { SlPicture } from "react-icons/sl";
 import { RiVideoFill, RiArticleLine } from "react-icons/ri";
 import { BiCalendarEvent } from "react-icons/bi";
@@ -18,7 +18,11 @@ const Main = (props: any) => {
         <div className="top-post">
           <div className="post">
             <div className="image">
-              <img src={goolge} alt="" />
+              {props.img?(
+                <img src={props.img} alt="" />
+              ):(
+                <img src={user} alt="" />
+              )}
             </div>
             <input
               type="text"
@@ -63,6 +67,8 @@ const mapStateToProps = (state: any) => {
   return {
     articles: state.Articles.articles,
     loading: state.Articles.loading,
+    img:state.User.img
+
   };
 };
 export default connect(mapStateToProps)(Main);

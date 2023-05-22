@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import card from "/images/card-bg.svg";
-import camera from "/images/photo.svg";
+import user from "/images/user.jpeg";
 import { FaUserCheck, FaBookmark } from "react-icons/fa";
 import { BsPlus } from "react-icons/bs";
 import Main from "./Main";
 import RightSide from "./RightSide";
 import { useShadowProvider } from "../context/Shadow";
-const Home = () => {
+import { connect } from "react-redux";
+import { setImgProfile } from "../redux/actions/Action";
+const Home = (props:any) => {
   const {post}=useShadowProvider()
+  const [imgProfile,setImgProfile]=useState<any>("")
+  const [img,setImg]=useState("")
+  useEffect(()=>{
+    if(imgProfile){
+      setImg(URL.createObjectURL(imgProfile))
+    }
+  },[imgProfile])
+  if(img){
+    props.imgProfile(img)
+  }
   return (
     <>
       <div className={`home`}>
@@ -28,10 +40,15 @@ const Home = () => {
               <div className="head-img">
                 <img src={card} alt="" />
               </div>
-              <img src={camera} className="camera" alt="" />
+              {props.img?(
+                <img src={props.img} className="camera" alt="" />
+              ):(
+                <img src={user} className="camera"/>
+              )}
               <div className="texts">
-                <h5>Welcome, Amr Kallas</h5>
-                <a href="">Add a photo</a>
+                <h5>Welcome, {props.user[0].name}</h5>
+                <label htmlFor="pic">Add a profile picture</label>
+                <input type="file" name="pic" id="pic" style={{display:"none"}} onChange={(e)=>setImgProfile(e.target.files?.[0])} />
               </div>
               <hr />
               <div className="another-text">
@@ -80,5 +97,16 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
+const mapStateToProps=(state:any)=>{
+  return{
+    user: state.User.user,
+    img:state.User.img,
+    articles: state.Articles.articles,
+    }
+}
+const mapDispatchToProps=(dispatch:any)=>{
+  return{
+    imgProfile:(payload:any)=>dispatch(setImgProfile(payload))
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

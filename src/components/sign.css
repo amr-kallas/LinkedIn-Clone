@@ -1,0 +1,81 @@
+.sign{
+    background: linear-gradient(68.66deg,#e8e2ff 1.3%,#f7f5ff 50%);
+    width: 100%;
+    height: 100vh;
+}
+.sign form{
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-shadow: 0 0 4px black;
+    padding: 50px 30px 30px;
+    border-radius: 8px;
+}
+.sign form h2{
+    font-size: 35px;
+}
+.sign form .details{
+    margin: 20px 0;
+    color: #888;
+}
+.sign form label{
+    font-weight: bold;
+    font-size: 14px;
+}
+.sign form input{
+    padding: 0.5rem 5px;
+    border-radius: 8px;
+    margin: 3px 0 20px;
+    border: 1px solid #888;
+}
+.sign form input:focus{
+    box-shadow: 0 0 0 0.1875rem rgba(109, 74, 255, 0.2);
+    outline: none;
+    border-color: #6d4aff;
+}
+.sign form .wrong{
+    color: red;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+.sign form button{
+    background-color: #6d4aff;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+.sign form .new{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+}
+.sign form .new a{
+    color: #6d4aff;
+}
+@media(max-width:430px){
+    .sign form{
+        width: 350px;
+    }
+    .sign form h2{
+        font-size: 25px;
+    }
+}
+@media(max-width:350px){
+    .sign form{
+        width: 300px;
+    }
+    .sign form h2{
+        font-size: 20px;
+    }
+}

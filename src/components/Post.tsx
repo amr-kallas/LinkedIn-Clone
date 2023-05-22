@@ -1,7 +1,7 @@
 import { useState, useEffect, useId } from "react";
 import React from "react";
 import "./post.css";
-import goolge from "/images/google.svg";
+import user from "/images/user.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { SlPicture } from "react-icons/sl";
 import { RiVideoFill } from "react-icons/ri";
@@ -14,6 +14,8 @@ type post = {
   gitArticle: Function;
   articles: any;
   setLoading: Function;
+  user:any
+  img:any
 };
 
 const Post = (props: post) => {
@@ -63,9 +65,13 @@ const Post = (props: post) => {
         <div className="main-postes">
           <div className="head-main-postes">
             <div className="image">
-              <img src={goolge} alt="" />
+              {props.img?(
+                <img src={props.img}/>
+              ):(
+                <img src={user} alt="" />
+              )}
             </div>
-            <h6>Amr Kallas</h6>
+            <h6>{props.user[0].name}</h6>
           </div>
           <div className="texts">
             <textarea
@@ -140,6 +146,7 @@ const mapStateToProps = (state: any) => {
     loading: state.Articles.loading,
     articles: state.Articles.articles,
     user: state.User.user,
+    img:state.User.img
   };
 };
 const mapDispatchToProps = (dispatch: any) => {
