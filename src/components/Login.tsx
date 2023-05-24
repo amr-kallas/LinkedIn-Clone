@@ -5,6 +5,7 @@ import google from "/images/google.svg";
 import hero from "/images/login-hero.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import {FcGoogle} from 'react-icons/fc'
 const Login = () => {
   const user = useSelector((state: any) => state.User);
   const dispatch = useDispatch();
@@ -22,11 +23,9 @@ const Login = () => {
           <div className="text">
             <h2>welcome to your professional community</h2>
             <div className="sign-google">
-              <img className="google" src={google} alt="" />
+              <i><FcGoogle/></i>
               <button>
-                <Link className="button-sign" to={"home"}>
                   Sign in with Google
-                </Link>
               </button>
             </div>
           </div>

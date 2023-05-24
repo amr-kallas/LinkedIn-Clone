@@ -7,6 +7,13 @@ export const initialState = {
 };
 
 const articleReducer = (state = initialState, action: any) => {
+  const editValue=(articles:any)=>{
+    state.articles.map((article:any,index:number)=>{
+      if(article.id==action.editID){
+        const edit=article[index]
+      }
+    })
+  }
     localStorage.setItem("loading",JSON.stringify(state.loading))
     localStorage.setItem("articles",JSON.stringify(state.articles))
   switch (action.type) {
@@ -44,13 +51,18 @@ const articleReducer = (state = initialState, action: any) => {
       };
     case actions.DELETE_POST:
       localStorage.removeItem("articles")
+      console.log("removed")
       return{
         ...state,
         articles:state.articles.filter((article:any)=>{
           return article.id !=action.deleteId
-        })
+        }),
       }
-      
+    case actions.EDIT:
+      return{
+        ...state,
+        articles:[action.editPayload]
+      }
     default:
       return state;
   }

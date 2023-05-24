@@ -1,4 +1,4 @@
-import React, { createContext, FC, ReactNode, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 type post={
     post:boolean,

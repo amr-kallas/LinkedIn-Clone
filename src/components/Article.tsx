@@ -10,6 +10,7 @@ import { IoIosSend } from "react-icons/io";
 import ReactPlayer from "react-player";
 import { deletePost, edit_delete, setLike } from "../redux/actions/Action";
 import { connect } from "react-redux";
+import Edit from "./Edit";
 type propsArticle = {
   articles: any;
   loading: boolean;
@@ -20,8 +21,7 @@ type propsArticle = {
   edit_delete:Function
 };
 const Article = (props: propsArticle) => {
-  const [edit,setEdit]=useState(false)
-  console.log(props.articles)
+  const [edit,setEdit]=useState("")
   const date: any = new Date();
   return (
     <div className="article">
@@ -53,7 +53,8 @@ const Article = (props: propsArticle) => {
                   </i>
                   {article.editAndDelete&&(
                     <div className="information">
-                      <p>Edit</p>
+                      <p onClick={()=>setEdit(article.id)}>Edit</p>
+                      {edit==article.id?(<Edit article={article} setEdit={setEdit}/>):''}
                       <hr />
                       <p onClick={()=>{props.deletePost(article.id)}}>Delete</p>
                     </div>
@@ -120,8 +121,13 @@ const Article = (props: propsArticle) => {
                     Send
                   </li>
                 </ul>
+                {/* {edit&&(
+                        <Edit article={article} setEdit={setEdit}/>
+                      )} */}
               </div>
+              
             );
+            
           })}
         </div>
       )}

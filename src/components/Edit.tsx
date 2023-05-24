@@ -1,6 +1,7 @@
 import { useState, useEffect, useId } from "react";
 import React from "react";
 import "./post.css";
+import "./edit.css"
 import user from "/images/user.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { SlPicture } from "react-icons/sl";
@@ -16,35 +17,33 @@ type post = {
   setLoading: Function;
   user:any
   img:any
+  article:any,
+  setEdit:any
 };
 
-const Post = (props: post) => {
-  const setID = useId();
+const Edit = (props: post) => {
+  console.log(props.articles)
   function reset() {
-    props.setLoading(true);
-    props.setPost(false);
-    props.gitArticle({
-      id: setID,
-      description: text,
-      image: showImg,
-      video: video,
-      isLike: {
-        count: 0,
-        liked: false,
-      },
-      editAndDelete:false
-    });
     setMedia("");
     setText("");
     setImg("");
     setShowImg("");
     setVideo("");
-    props.setLoading(false);
   }
-  const [media, setMedia] = useState("");
-  const [text, setText] = useState("");
+  const editTheArticle=()=>{
+    props.articles.map((art:any)=>{
+      if(art.id==props.article.id){
+        art.description=text,
+        art.image=showImg,
+        art.video=video
+      }
+    })
+    props.setEdit(false)
+  }
+  const [media, setMedia] = useState(props.article.image?"image":"");
+  const [text, setText] = useState(props.article.description);
   const [img, setImg] = useState<any>("");
-  const [showImg, setShowImg] = useState("");
+  const [showImg, setShowImg] = useState(props.article.image);
   const [video, setVideo] = useState("");
   useEffect(() => {
     if (img) {
@@ -56,8 +55,8 @@ const Post = (props: post) => {
       <div className="shadow"></div>
       <div className="postes">
         <div className="header-postes">
-          <p>Create a post</p>
-          <i onClick={() => props.setPost(false)}>
+          <p>Edit the post</p>
+          <i onClick={() => props.setEdit(false)}>
             <AiOutlineClose />
           </i>
         </div>
@@ -75,7 +74,7 @@ const Post = (props: post) => {
           </div>
           <div className="texts">
             <textarea
-              placeholder="what do you want to talk about"
+              placeholder="what do you want to edit"
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
@@ -88,12 +87,10 @@ const Post = (props: post) => {
                 onChange={(e) => setImg(e.target.files?.[0])}
               />
               <label
-                htmlFor="input"
-                className={`${img ? "label-none" : "label-block"}`}
-              >
+                htmlFor="input">
                 Select an image for share
               </label>
-              {img && (
+              {(img || showImg) && (
                 <div className="show-img">
                   <img className="chosen-img" src={showImg} alt={img.name} />
                 </div>
@@ -114,6 +111,7 @@ const Post = (props: post) => {
               )}
             </div>
           ) : null}
+          
           <div className="footer-main-postes">
             <div className="icon">
               <i onClick={() => setMedia("image")}>
@@ -130,9 +128,9 @@ const Post = (props: post) => {
               <button
                 disabled={text ? false : true}
                 className={`${text ? "allow" : "banned"}`}
-                onClick={() => reset()}
+                onClick={() => editTheArticle()}
               >
-                post
+                Edit
               </button>
             </div>
           </div>
@@ -155,4 +153,5 @@ const mapDispatchToProps = (dispatch: any) => {
     setLoading: (payload: any) => dispatch(setLoading(payload)),
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);
+
