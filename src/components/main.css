@@ -25,7 +25,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-right: 10px;
 }
 .main .post input {
   width: 90%;
@@ -33,6 +32,7 @@
   border-radius: 15px;
   border: 1px solid #888;
   cursor: pointer;
+  margin-left: 10px;
 }
 .main .post input:focus {
   outline: none;

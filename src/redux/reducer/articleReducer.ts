@@ -51,7 +51,6 @@ const articleReducer = (state = initialState, action: any) => {
       };
     case actions.DELETE_POST:
       localStorage.removeItem("articles")
-      console.log("removed")
       return{
         ...state,
         articles:state.articles.filter((article:any)=>{
@@ -61,7 +60,7 @@ const articleReducer = (state = initialState, action: any) => {
     case actions.EDIT:
       return{
         ...state,
-        articles:[action.editPayload]
+        articles:action.editPayload
       }
     default:
       return state;

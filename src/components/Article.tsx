@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import google from "/images/google.svg";
 import user from "/images/user.jpeg";
 import "./article.css";
 import { BsThreeDots } from "react-icons/bs";
@@ -11,6 +10,7 @@ import ReactPlayer from "react-player";
 import { deletePost, edit_delete, setLike } from "../redux/actions/Action";
 import { connect } from "react-redux";
 import Edit from "./Edit";
+import Comment from "./Comment";
 type propsArticle = {
   articles: any;
   loading: boolean;
@@ -22,6 +22,7 @@ type propsArticle = {
 };
 const Article = (props: propsArticle) => {
   const [edit,setEdit]=useState("")
+  const [comment,setComment]=useState("")
   const date: any = new Date();
   return (
     <div className="article">
@@ -54,7 +55,9 @@ const Article = (props: propsArticle) => {
                   {article.editAndDelete&&(
                     <div className="information">
                       <p onClick={()=>setEdit(article.id)}>Edit</p>
-                      {edit==article.id?(<Edit article={article} setEdit={setEdit}/>):''}
+                      {edit==article.id?(<Edit article={article} setEdit={setEdit} setPost={function (value: React.SetStateAction<boolean>): void {
+                        throw new Error("Function not implemented.");
+                      } }/>):''}
                       <hr />
                       <p onClick={()=>{props.deletePost(article.id)}}>Delete</p>
                     </div>
@@ -99,7 +102,7 @@ const Article = (props: propsArticle) => {
                     </i>{" "}
                     Like
                   </li>
-                  <li>
+                  <li onClick={()=>setComment(article.id)}>
                     {" "}
                     <i>
                       <FaRegCommentDots />
@@ -121,9 +124,7 @@ const Article = (props: propsArticle) => {
                     Send
                   </li>
                 </ul>
-                {/* {edit&&(
-                        <Edit article={article} setEdit={setEdit}/>
-                      )} */}
+              {comment==article.id?<Comment setComment={setComment}/>:''}
               </div>
               
             );

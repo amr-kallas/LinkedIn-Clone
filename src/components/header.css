@@ -98,9 +98,7 @@
 }
 .header .toggle-menu .menu-bars {
   position: absolute;
-  right: -15px;
   top: 0px;
-  width: 220px;
   background: white;
   padding: 10px;
   height: 100vh;

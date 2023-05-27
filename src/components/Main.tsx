@@ -59,7 +59,7 @@ const Main = (props: any) => {
         </div>
         <Article articles={props.articles} loading={props.loading} />
       </div>
-      {post && <Post setPost={setPost} />}
+      {post && <Post setPost={setPost} post={post} />}
     </>
   );
 };

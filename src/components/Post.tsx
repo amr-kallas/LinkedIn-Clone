@@ -9,7 +9,9 @@ import { BiMessageEdit } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import { getArticles, setLoading } from "../redux/actions/Action";
 import { connect } from "react-redux";
+import { useSpring ,animated } from "@react-spring/web";
 type post = {
+  post:boolean
   setPost: React.Dispatch<React.SetStateAction<boolean>>;
   gitArticle: Function;
   articles: any;
@@ -19,6 +21,12 @@ type post = {
 };
 
 const Post = (props: post) => {
+
+  const animate=useSpring({
+    from:{  y:-100},
+    to:{x:`-50%`,y:40},
+  })
+
   const setID = useId();
   function reset() {
     props.setLoading(true);
@@ -32,7 +40,8 @@ const Post = (props: post) => {
         count: 0,
         liked: false,
       },
-      editAndDelete:false
+      editAndDelete:false,
+      comment:[]
     });
     setMedia("");
     setText("");
@@ -54,7 +63,7 @@ const Post = (props: post) => {
   return (
     <>
       <div className="shadow"></div>
-      <div className="postes">
+      <animated.div style={animate} className="postes">
         <div className="header-postes">
           <p>Create a post</p>
           <i onClick={() => props.setPost(false)}>
@@ -137,7 +146,7 @@ const Post = (props: post) => {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </>
   );
 };

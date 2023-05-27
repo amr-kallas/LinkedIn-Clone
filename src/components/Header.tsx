@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSpring , animated } from "@react-spring/web";
 import {
   FaSistrix,
   FaHome,
@@ -16,6 +17,12 @@ const Header = () => {
   const [signout, setSignout] = useState(false);
   const [work, setWork] = useState(false);
   const [bars, setBars] = useState(false);
+
+  const animate=useSpring({
+    width:bars?220:0,
+    right:bars?-15:-300
+  })
+
   return (
     <div className="header">
       <div className="container">
@@ -97,8 +104,8 @@ const Header = () => {
             style={{ cursor: "pointer" }}
             onClick={() => setBars(true)}
           />
-          {bars && (
-            <div className="menu-bars">
+          
+            <animated.div style={animate} className="menu-bars">
               <i className="close" onClick={()=>setBars(false)}><AiOutlineClose/></i>
               <ul>
                 <li>Home</li>
@@ -120,8 +127,8 @@ const Header = () => {
                   </i>
                 </li>
               </ul>
-            </div>
-          )}
+            </animated.div>
+          
         </div>
       </div>
     </div>

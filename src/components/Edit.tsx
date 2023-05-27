@@ -1,35 +1,33 @@
 import { useState, useEffect, useId } from "react";
 import React from "react";
 import "./post.css";
-import "./edit.css"
 import user from "/images/user.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { SlPicture } from "react-icons/sl";
 import { RiVideoFill } from "react-icons/ri";
 import { BiMessageEdit } from "react-icons/bi";
 import ReactPlayer from "react-player";
-import { getArticles, setLoading } from "../redux/actions/Action";
+import { edit, getArticles, setLoading } from "../redux/actions/Action";
 import { connect } from "react-redux";
+import { useSpring,animated } from "@react-spring/web";
 type post = {
   setPost: React.Dispatch<React.SetStateAction<boolean>>;
-  gitArticle: Function;
   articles: any;
-  setLoading: Function;
   user:any
   img:any
   article:any,
-  setEdit:any
+  setEdit:any,
+  edit:Function
 };
 
 const Edit = (props: post) => {
-  console.log(props.articles)
-  function reset() {
-    setMedia("");
-    setText("");
-    setImg("");
-    setShowImg("");
-    setVideo("");
-  }
+
+  const animate=useSpring({
+    from:{y:`-40%`},
+    to:{x:`-50%`,y:`20%`}
+    
+  })
+
   const editTheArticle=()=>{
     props.articles.map((art:any)=>{
       if(art.id==props.article.id){
@@ -39,6 +37,7 @@ const Edit = (props: post) => {
       }
     })
     props.setEdit(false)
+    props.edit(props.articles)
   }
   const [media, setMedia] = useState(props.article.image?"image":"");
   const [text, setText] = useState(props.article.description);
@@ -53,7 +52,7 @@ const Edit = (props: post) => {
   return (
     <>
       <div className="shadow"></div>
-      <div className="postes">
+      <animated.div style={{position:'fixed',...animate}} className="postes">
         <div className="header-postes">
           <p>Edit the post</p>
           <i onClick={() => props.setEdit(false)}>
@@ -135,7 +134,7 @@ const Edit = (props: post) => {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </>
   );
 };
@@ -149,8 +148,7 @@ const mapStateToProps = (state: any) => {
 };
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    gitArticle: (payload: any) => dispatch(getArticles(payload)),
-    setLoading: (payload: any) => dispatch(setLoading(payload)),
+    edit:(payload:any)=>dispatch(edit(payload))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Edit);

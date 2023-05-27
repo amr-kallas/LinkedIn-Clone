@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import ShadowProvider from "./context/Shadow";
 import Sign from "./components/Sign";
 import Join from "./components/Join";
+import Comment from "./components/Comment";
 const App = () => {
   return (
     <ShadowProvider>
@@ -27,6 +28,7 @@ const App = () => {
               />
               <Route path="/sign" element={<Sign/>}/>
               <Route path="/join" element={<Join/>}/>
+              <Route path="/comment" element={<Comment/>}/>
             </Routes>
           </Router>
         </Provider>

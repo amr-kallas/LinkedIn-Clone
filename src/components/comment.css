@@ -1,0 +1,72 @@
+.comment{
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    font-size: 40px;
+    z-index: 21;
+    background-color: #eee;
+
+}
+.comment .box-comment{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+}
+.comment .text-comment{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+.comment .text-comment input{
+    border-radius: 10px;
+    width: 100%;
+    margin-right: 15px;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 13px;
+}
+.comment .text-comment i{
+    display: flex;
+    cursor: pointer;
+}
+.comment .show-comments{
+
+}
+.comment .show-comments .show-comment{
+    display: flex;
+    align-items: center;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.comment .show-comments .show-comment .img-comment{
+
+}
+.comment .show-comments .show-comment .img-comment img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.comment .show-comments .show-comment .info-comment{
+    margin-left: 10px;
+}
+.comment .show-comments .show-comment .info-comment p{
+    font-size: 18px;
+}
+.comment .show-comments .show-comment .info-comment .name{
+    font-size: 16px;
+    font-weight: bold;
+}
+.comment .closed i{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 30px;
+    cursor: pointer;
+}
