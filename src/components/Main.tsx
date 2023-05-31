@@ -28,6 +28,7 @@ const Main = (props: any) => {
               type="text"
               placeholder="start a post"
               onClick={() => setPost(true)}
+              readOnly
             />
           </div>
           <div className="url">

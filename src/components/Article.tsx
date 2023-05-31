@@ -124,7 +124,7 @@ const Article = (props: propsArticle) => {
                     Send
                   </li>
                 </ul>
-              {comment==article.id?<Comment setComment={setComment}/>:''}
+              {comment==article.id?<Comment setComment={setComment} commentID={comment}/>:''}
               </div>
               
             );

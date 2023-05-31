@@ -47,3 +47,9 @@ export const setImgProfile = (img: any) => {
     img: img,
   };
 };
+export const comment=(payload:any)=>{
+  return{
+    type:actions.COMMENT,
+    message:payload,
+  }
+}

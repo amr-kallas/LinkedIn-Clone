@@ -50,6 +50,16 @@ const Post = (props: post) => {
     setVideo("");
     props.setLoading(false);
   }
+  const handleMedia=(e:any)=>{
+    if(e=="image"){
+      setMedia("image")
+      setVideo("")
+    }
+    else if(e=="video"){
+      setMedia("video")
+      setImg("")
+    }
+  }
   const [media, setMedia] = useState("");
   const [text, setText] = useState("");
   const [img, setImg] = useState<any>("");
@@ -125,10 +135,10 @@ const Post = (props: post) => {
           ) : null}
           <div className="footer-main-postes">
             <div className="icon">
-              <i onClick={() => setMedia("image")}>
+              <i onClick={() => handleMedia("image")}>
                 <SlPicture />
               </i>
-              <i onClick={() => setMedia("video")}>
+              <i onClick={() => handleMedia("video")}>
                 <RiVideoFill />
               </i>
               <i>

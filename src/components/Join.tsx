@@ -53,7 +53,7 @@ const Join = (props: any) => {
         />
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           name="email"
           required
           onChange={(e) => {
