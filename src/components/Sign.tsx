@@ -10,7 +10,7 @@ const Sign = () => {
   const handler=(e:any)=>{
     e.preventDefault();
     if(user==JSON.parse(localStorage.getItem("user"))[0].email && password==JSON.parse(localStorage.getItem("user"))[0].password || user==JSON.parse(localStorage.getItem("user"))[0].name && password==JSON.parse(localStorage.getItem("user"))[0].password){
-      navigate('/home')
+      navigate('/home',{replace:true})
     }else{
       setError(true)
     }

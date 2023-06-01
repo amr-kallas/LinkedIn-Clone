@@ -9,6 +9,7 @@ import ShadowProvider from "./context/Shadow";
 import Sign from "./components/Sign";
 import Join from "./components/Join";
 import Comment from "./components/Comment";
+import ProtectedRoute from "./ProtectedRoute";
 const App = () => {
   return (
     <ShadowProvider>
@@ -21,8 +22,10 @@ const App = () => {
                 path="/home"
                 element={
                   <>
+                  <ProtectedRoute>
                     <Header />
                     <Home />
+                  </ProtectedRoute>
                   </>
                 }
               />

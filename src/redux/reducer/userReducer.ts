@@ -1,7 +1,7 @@
 import  * as actions   from "../actions/ActionType";
 
 const initialState = {
-  user: localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")):[],
+  user: localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")):[1],
   img:localStorage.getItem("img")?localStorage.getItem("img"):""
 };
 
